@@ -1,8 +1,8 @@
 import Slider from "./slider";
 
 export default class MainSlider extends Slider {
-  constructor(page, btns) {
-    super(page, btns);
+  constructor(btns) {
+    super(btns);
   }
 
   showSlides(n) {
@@ -17,7 +17,7 @@ export default class MainSlider extends Slider {
     try {
       this.hanson.style.opacity = "0";
 
-      if (n === 3) {
+      if (n == 3) {
         this.hanson.classList.add("animated");
         setTimeout(() => {
           this.hanson.style.opacity = "1";
@@ -28,9 +28,10 @@ export default class MainSlider extends Slider {
       }
     } catch (e) {}
 
-    this.slides.forEach((slide) => {
+    Array.from(this.slides).forEach((slide) => {
       slide.style.display = "none";
     });
+
     this.slides[this.slideIndex - 1].style.display = "block";
   }
 
