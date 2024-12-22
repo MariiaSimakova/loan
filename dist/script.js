@@ -226,7 +226,6 @@ class Slider {
     this.animate = animate;
     this.autoplay = autoplay;
     this.slideIndex = 1;
-    console.log(this.slides);
   }
 }
 
